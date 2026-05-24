@@ -1,0 +1,25 @@
+{
+  "tag": "industrial-rrf-u16-s1-g1-n1",
+  "model": "RRF",
+  "dataset": "Industrial_and_Scientific",
+  "ranklists": [
+    "ranklists/industrial-inductive-baseline-test.jsonl",
+    "ranklists/industrial-sasrec-main-test.jsonl",
+    "ranklists/industrial-gru4rec-main-test.jsonl",
+    "ranklists/industrial-narm-main-test.jsonl"
+  ],
+  "weights": [
+    16.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "rrf_k": 60.0,
+  "topk": 200,
+  "metrics": {
+    "recall@10": 0.05470236344022752,
+    "ndcg@10": 0.028046667395634165,
+    "recall@50": 0.12754731783857998,
+    "ndcg@50": 0.04390446853608067
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "recall@10": 0.11723820594788337,
+  "recall@50": 0.24035325648228875,
+  "ndcg@50": 0.08081687496297549,
+  "ndcg@10": 0.05378204009043719,
+  "model": "RichUniSRec",
+  "dataset": "CDs_and_Vinyl_Rich",
+  "split": "test",
+  "checkpoint": "checkpoints/cds-richunisrec-main-best.pth",
+  "ranklist_file": "ranklists/cds-richunisrec-main-test.jsonl",
+  "num_rows": 123876,
+  "missing_keys": [],
+  "unexpected_keys": []
+}

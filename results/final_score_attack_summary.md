@@ -1,0 +1,64 @@
+# Score Attack Summary
+
+Ranking criterion: test NDCG@10.
+
+## Best by dataset
+
+| tag | model | dataset | runtime_sec | valid_ndcg@10 | test_recall@10 | test_ndcg@10 | test_recall@50 | test_ndcg@50 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| cds-rrf-rich-fine-k60-1-0p04-0p04-0p04 | RRF | CDs_and_Vinyl | 627.45 |  | 0.11662468920533436 | 0.05525353795272109 | 0.2407488133294585 | 0.08253998618667327 |
+| cds-richunisrec-main | RichUniSRec | CDs_and_Vinyl_Rich | 6640.47 | 0.0552 | 0.1172 | 0.0538 | 0.2404 | 0.0808 |
+| industrial-rrf-rich-4-1-1-1-8 | RRF | Industrial_and_Scientific | 207.0 |  | 0.061233696185152495 | 0.031120069650833457 | 0.14688633911934884 | 0.04969159710407503 |
+| industrial-richunisrec-main | RichUniSRec | Industrial_and_Scientific_Rich | 1358.34 | 0.0336 | 0.0587 | 0.0284 | 0.1411 | 0.0463 |
+| mi-rrf-rich-8-1-1-1-8 | RRF | Musical_Instruments | 207.0 |  | 0.07393930952836923 | 0.0382957620916205 | 0.1787809676352304 | 0.060968245682025086 |
+| mi-richunisrec-main | RichUniSRec | Musical_Instruments_Rich | 1493.34 | 0.0375 | 0.0712 | 0.035 | 0.1713 | 0.0567 |
+
+## All experiments sorted by test NDCG@10
+
+| tag | model | dataset | runtime_sec | valid_ndcg@10 | test_recall@10 | test_ndcg@10 | test_recall@50 | test_ndcg@50 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| cds-rrf-rich-fine-k60-1-0p04-0p04-0p04 | RRF | CDs_and_Vinyl | 627.45 |  | 0.11662468920533436 | 0.05525353795272109 | 0.2407488133294585 | 0.08253998618667327 |
+| cds-rrf-rich-1-0p05-0p05-0p05 | RRF | CDs_and_Vinyl | 300.0 |  | 0.11601924505150311 | 0.05520008787238782 | 0.24091833769253124 | 0.0826768915924195 |
+| cds-richunisrec-main | RichUniSRec | CDs_and_Vinyl_Rich | 6640.47 | 0.0552 | 0.1172 | 0.0538 | 0.2404 | 0.0808 |
+| mi-rrf-rich-8-1-1-1-8 | RRF | Musical_Instruments | 207.0 |  | 0.07393930952836923 | 0.0382957620916205 | 0.1787809676352304 | 0.060968245682025086 |
+| mi-rrf-u8-s1-g1-n1 | RRF | Musical_Instruments | 21.7 |  | 0.06996988109124462 | 0.03639702782622258 | 0.16993680252093527 | 0.05795855067728658 |
+| mi-rrf-u4-n1 | RRF | Musical_Instruments | 21.29 |  | 0.069221260815822 | 0.03609565093103478 | 0.16875293789933668 | 0.05760137808027823 |
+| mi-rrf-u4-g1 | RRF | Musical_Instruments | 24.25 |  | 0.06918644126812792 | 0.03604066337492852 | 0.16861365970856038 | 0.05753392345735608 |
+| mi-rrf-u4-s1-g1-n1 | RRF | Musical_Instruments | 24.76 |  | 0.06915162172043385 | 0.03603008902424871 | 0.16838733264854888 | 0.0574262460926475 |
+| mi-rrf-u1-s025-g025-n025 | RRF | Musical_Instruments | 21.49 |  | 0.06915162172043385 | 0.03603008902424871 | 0.16838733264854888 | 0.0574262460926475 |
+| mi-rrf-u4-s1 | RRF | Musical_Instruments | 23.1 |  | 0.06857709918348161 | 0.03550172181463733 | 0.17018053935479377 | 0.057487245950147765 |
+| mi-rrf-u2-s1 | RRF | Musical_Instruments | 21.16 |  | 0.06812444506345862 | 0.03529737340440512 | 0.16934487021013597 | 0.05720729807114391 |
+| mi-richunisrec-main | RichUniSRec | Musical_Instruments_Rich | 1493.34 | 0.0375 | 0.0712 | 0.035 | 0.1713 | 0.0567 |
+| mi-transductive-lr5e5 | UniSRec | Musical_Instruments | 1404.54 | 0.0376 | 0.068 | 0.0347 | 0.1668 | 0.0561 |
+| mi-rrf-unisrec-only | RRF | Musical_Instruments | 23.27 |  | 0.06798516687268233 | 0.034678046430432534 | 0.1668204530023155 | 0.05608509620763031 |
+| mi-transductive-warm | UniSRec | Musical_Instruments | 1054.8 | 0.0376 | 0.0674 | 0.0343 | 0.1658 | 0.0555 |
+| cds-sasrec-main | SASRec | CDs_and_Vinyl | 2331.95 | 0.0381 | 0.0742 | 0.0341 | 0.1616 | 0.0532 |
+| mi-transductive-lr5e5-temp003 | UniSRec | Musical_Instruments | 1058.05 | 0.0373 | 0.0664 | 0.0338 | 0.1641 | 0.0549 |
+| mi-baseline-resume | UniSRec | Musical_Instruments | 2180.68 | 0.0373 | 0.0647 | 0.0336 | 0.1559 | 0.0532 |
+| cds-gru4rec-main | GRU4Rec | CDs_and_Vinyl | 656.42 | 0.0364 | 0.0602 | 0.0316 | 0.1397 | 0.0489 |
+| industrial-rrf-rich-4-1-1-1-8 | RRF | Industrial_and_Scientific | 207.0 |  | 0.061233696185152495 | 0.031120069650833457 | 0.14688633911934884 | 0.04969159710407503 |
+| cds-narm-main | NARM | CDs_and_Vinyl | 1151.85 | 0.0367 | 0.0596 | 0.0311 | 0.1388 | 0.0483 |
+| industrial-richunisrec-main | RichUniSRec | Industrial_and_Scientific_Rich | 1358.34 | 0.0336 | 0.0587 | 0.0284 | 0.1411 | 0.0463 |
+| industrial-rrf-u8-s1-g1-n1 | RRF | Industrial_and_Scientific | 19.33 |  | 0.055035794841620085 | 0.028217604351465662 | 0.13029322349710698 | 0.044571597524074746 |
+| industrial-rrf-u16-s1-g1-n1 | RRF | Industrial_and_Scientific | 19.02 |  | 0.05470236344022752 | 0.028046667395634165 | 0.12754731783857998 | 0.04390446853608067 |
+| industrial-rrf-u8-g1 | RRF | Industrial_and_Scientific | 18.99 |  | 0.05399627341374914 | 0.027904833691314232 | 0.12666470530548202 | 0.043731440281651233 |
+| mi-sasrec-main | SASRec | Musical_Instruments | 846.34 | 0.0304 | 0.0536 | 0.0279 | 0.1313 | 0.0447 |
+| industrial-rrf-u8-n1 | RRF | Industrial_and_Scientific | 19.45 |  | 0.05389820535451603 | 0.02755667128300418 | 0.12695890948318134 | 0.04345055973057042 |
+| industrial-rrf-u8-s1 | RRF | Industrial_and_Scientific | 18.24 |  | 0.054525840933607926 | 0.027378269984562508 | 0.12654702363440226 | 0.043047947947472444 |
+| mi-gru4rec-main | GRU4Rec | Musical_Instruments | 138.78 | 0.0296 | 0.0519 | 0.0271 | 0.1262 | 0.0431 |
+| industrial-rrf-unisrec-only | RRF | Industrial_and_Scientific | 18.9 |  | 0.05307443365695793 | 0.026716644972635303 | 0.12427184466019417 | 0.04222619669562842 |
+| industrial-inductive-baseline | UniSRec | Industrial_and_Scientific | 5200.4 | 0.0324 | 0.0531 | 0.0267 | 0.1243 | 0.0422 |
+| cds-gru4rec-lr5e4 | GRU4Rec | CDs_and_Vinyl | 1299.47 | 0.032 | 0.0507 | 0.0267 | 0.1218 | 0.0421 |
+| cds-richunisrec-smoke | RichUniSRec | CDs_and_Vinyl_Rich | 333.67 | 0.0271 | 0.0546 | 0.0263 | 0.1284 | 0.0423 |
+| mi-narm-main | NARM | Musical_Instruments | 175.79 | 0.0294 | 0.0501 | 0.0262 | 0.1268 | 0.0428 |
+| industrial-transductive-lr5e5 | UniSRec | Industrial_and_Scientific | 1614.45 | 0.0306 | 0.0523 | 0.0243 | 0.1279 | 0.0407 |
+| industrial-sasrec-main | SASRec | Industrial_and_Scientific | 513.1 | 0.0234 | 0.0393 | 0.0182 | 0.099 | 0.0311 |
+| mi-richunisrec-smoke | RichUniSRec | Musical_Instruments_Rich | 84.37 | 0.0196 | 0.0354 | 0.0178 | 0.0997 | 0.0316 |
+| smoke-mi | UniSRec | Musical_Instruments | 166.72 | 0.0194 | 0.033 | 0.0171 | 0.0776 | 0.0267 |
+| industrial-narm-main | NARM | Industrial_and_Scientific | 269.83 | 0.0218 | 0.0332 | 0.0171 | 0.0894 | 0.0291 |
+| industrial-gru4rec-main | GRU4Rec | Industrial_and_Scientific | 275.82 | 0.0215 | 0.0326 | 0.0169 | 0.0882 | 0.0288 |
+| industrial-smoke-transductive-lr5e5 | UniSRec | Industrial_and_Scientific | 87.39 | 0.0195 | 0.0322 | 0.0162 | 0.0844 | 0.0274 |
+| mi-gru4rec-smoke | GRU4Rec | Musical_Instruments | 25.57 | 0.0165 | 0.0279 | 0.0139 | 0.0757 | 0.0241 |
+| mi-narm-smoke | NARM | Musical_Instruments | 25.35 | 0.0162 | 0.0271 | 0.0136 | 0.0757 | 0.024 |
+| mi-sasrec-smoke | SASRec | Musical_Instruments | 44.14 | 0.0152 | 0.0262 | 0.013 | 0.0707 | 0.0224 |
+| industrial-richunisrec-smoke | RichUniSRec | Industrial_and_Scientific_Rich | 70.75 | 0.0137 | 0.0221 | 0.0114 | 0.0703 | 0.0217 |

@@ -1,0 +1,14 @@
+{
+  "recall@10": 0.039266450916936355,
+  "recall@50": 0.09898989898989899,
+  "ndcg@10": 0.018172774626536662,
+  "ndcg@50": 0.031072735029737363,
+  "model": "SASRec",
+  "dataset": "Industrial_and_Scientific",
+  "split": "test",
+  "checkpoint": "checkpoints/industrial-sasrec-main-best.pth",
+  "ranklist_file": "ranklists/industrial-sasrec-main-test.jsonl",
+  "num_rows": 50985,
+  "missing_keys": [],
+  "unexpected_keys": []
+}

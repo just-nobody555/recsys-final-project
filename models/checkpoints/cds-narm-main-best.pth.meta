@@ -1,0 +1,26 @@
+{
+  "tag": "cds-narm-main",
+  "source_checkpoint": "checkpoints/NARM-May-24-2026_16-07-36.pth",
+  "backup_checkpoint": "checkpoints/cds-narm-main-best.pth",
+  "sha256": "2eca4bfd2e8588597cd4817f7a6dd4f2c5014dc357015a4b48b499ddd47fb106",
+  "model": "NARM",
+  "dataset": "CDs_and_Vinyl",
+  "test_result": {
+    "recall@10": 0.0596,
+    "recall@50": 0.1388,
+    "ndcg@10": 0.0311,
+    "ndcg@50": 0.0483
+  },
+  "best_valid_result": {
+    "recall@10": 0.0711,
+    "recall@50": 0.1596,
+    "ndcg@10": 0.0367,
+    "ndcg@50": 0.0559
+  },
+  "config_overrides": {
+    "epochs": 180,
+    "stopping_step": 15,
+    "show_progress": false,
+    "checkpoint_dir": "checkpoints"
+  }
+}

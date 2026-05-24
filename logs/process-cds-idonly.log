@@ -1,0 +1,6 @@
+Skipped PLM feature extraction.
+#Users: 123876
+#Items: 89370
+#Interaction in total: 23203272
+{'train': 20574816, 'valid': 1253845, 'test': 1374611}
+Average history length: 15.238691905873658

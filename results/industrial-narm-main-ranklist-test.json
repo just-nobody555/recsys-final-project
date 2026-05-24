@@ -1,0 +1,14 @@
+{
+  "recall@10": 0.0332058448563303,
+  "recall@50": 0.0893596155732078,
+  "ndcg@50": 0.029148165427807224,
+  "ndcg@10": 0.01706253304130738,
+  "model": "NARM",
+  "dataset": "Industrial_and_Scientific",
+  "split": "test",
+  "checkpoint": "checkpoints/industrial-narm-main-best.pth",
+  "ranklist_file": "ranklists/industrial-narm-main-test.jsonl",
+  "num_rows": 50985,
+  "missing_keys": [],
+  "unexpected_keys": []
+}

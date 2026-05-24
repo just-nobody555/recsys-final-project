@@ -1,0 +1,14 @@
+{
+  "recall@10": 0.05963221285801931,
+  "recall@50": 0.13877587264684038,
+  "ndcg@10": 0.03109572733149437,
+  "ndcg@50": 0.048299452046679216,
+  "model": "NARM",
+  "dataset": "CDs_and_Vinyl",
+  "split": "test",
+  "checkpoint": "checkpoints/cds-narm-main-best.pth",
+  "ranklist_file": "ranklists/cds-narm-main-test.jsonl",
+  "num_rows": 123876,
+  "missing_keys": [],
+  "unexpected_keys": []
+}

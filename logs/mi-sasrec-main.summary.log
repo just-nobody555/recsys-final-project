@@ -1,0 +1,16 @@
+| tag | model | dataset | runtime_sec | valid_ndcg@10 | test_recall@10 | test_ndcg@10 | test_recall@50 | test_ndcg@50 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| mi-transductive-lr5e5 | UniSRec | Musical_Instruments | 1404.54 | 0.0376 | 0.068 | 0.0347 | 0.1668 | 0.0561 |
+| mi-transductive-warm | UniSRec | Musical_Instruments | 1054.8 | 0.0376 | 0.0674 | 0.0343 | 0.1658 | 0.0555 |
+| mi-transductive-lr5e5-temp003 | UniSRec | Musical_Instruments | 1058.05 | 0.0373 | 0.0664 | 0.0338 | 0.1641 | 0.0549 |
+| mi-baseline-resume | UniSRec | Musical_Instruments | 2180.68 | 0.0373 | 0.0647 | 0.0336 | 0.1559 | 0.0532 |
+| mi-sasrec-main | SASRec | Musical_Instruments | 846.34 | 0.0304 | 0.0536 | 0.0279 | 0.1313 | 0.0447 |
+| mi-gru4rec-main | GRU4Rec | Musical_Instruments | 138.78 | 0.0296 | 0.0519 | 0.0271 | 0.1262 | 0.0431 |
+| industrial-inductive-baseline | UniSRec | Industrial_and_Scientific | 5200.4 | 0.0324 | 0.0531 | 0.0267 | 0.1243 | 0.0422 |
+| mi-narm-main | NARM | Musical_Instruments | 175.79 | 0.0294 | 0.0501 | 0.0262 | 0.1268 | 0.0428 |
+| industrial-transductive-lr5e5 | UniSRec | Industrial_and_Scientific | 1614.45 | 0.0306 | 0.0523 | 0.0243 | 0.1279 | 0.0407 |
+| smoke-mi | UniSRec | Musical_Instruments | 166.72 | 0.0194 | 0.033 | 0.0171 | 0.0776 | 0.0267 |
+| industrial-smoke-transductive-lr5e5 | UniSRec | Industrial_and_Scientific | 87.39 | 0.0195 | 0.0322 | 0.0162 | 0.0844 | 0.0274 |
+| mi-gru4rec-smoke | GRU4Rec | Musical_Instruments | 25.57 | 0.0165 | 0.0279 | 0.0139 | 0.0757 | 0.0241 |
+| mi-narm-smoke | NARM | Musical_Instruments | 25.35 | 0.0162 | 0.0271 | 0.0136 | 0.0757 | 0.024 |
+| mi-sasrec-smoke | SASRec | Musical_Instruments | 44.14 | 0.0152 | 0.0262 | 0.013 | 0.0707 | 0.0224 |

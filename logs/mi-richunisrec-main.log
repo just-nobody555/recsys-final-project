@@ -1,0 +1,350 @@
+command line args [-m RichUniSRec -d Musical_Instruments_Rich --train_stage transductive_ft --learning_rate 0.00005 --epochs 100 --stopping_step 10 --tag mi-richunisrec-main --result_file results/experiment_results.jsonl --checkpoint_dir checkpoints --show_progress false] will not be used in RecBole
+24 May 17:26    INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = dataset/processed/Musical_Instruments_Rich
+checkpoint_dir = checkpoints
+show_progress = False
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 100
+train_batch_size = 2048
+learner = adamw
+learning_rate = 5e-05
+train_neg_sample_args = {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 10
+clip_grad_norm = None
+weight_decay = 0.0
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = True
+metrics = ['Recall', 'NDCG']
+topk = [10, 50]
+valid_metric = NDCG@10
+valid_metric_bigger = True
+eval_batch_size = 2048
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = timestamp
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id_list', 'rating_list', 'time_gap_list', 'recency_list', 'item_id']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [0,inf)
+item_inter_num_interval = [0,inf)
+alias_of_user_id = None
+alias_of_item_id = ['item_id_list']
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = ['train', 'valid', 'test']
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.SEQUENTIAL
+n_layers = 3
+n_heads = 4
+hidden_size = 300
+inner_size = 512
+hidden_dropout_prob = 0.3
+attn_dropout_prob = 0.3
+hidden_act = gelu
+layer_norm_eps = 1e-12
+initializer_range = 0.02
+loss_type = CE
+item_drop_ratio = 0.15
+item_drop_coefficient = 0.95
+lambda = 0.001
+plm_suffix = blair-roberta-base.feature
+struct_suffix = rich-item-struct.npy
+train_stage = transductive_ft
+plm_size = 768
+adaptor_dropout_prob = 0.1
+adaptor_layers = [768, 300]
+temperature = 0.05
+n_exps = 8
+use_rich_item_struct = True
+use_user_history_features = True
+rich_struct_embedding_size = 32
+rich_user_feature_embedding_size = 32
+rich_rating_bucket_num = 6
+rich_time_gap_bucket_num = 10
+rich_recency_bucket_num = 51
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+single_spec = True
+local_rank = 0
+device = cuda
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+
+
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:501: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  df[field].fillna(value="", inplace=True)
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:501: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  df[field].fillna(value="", inplace=True)
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:501: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  df[field].fillna(value="", inplace=True)
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:1217: FutureWarning: using <built-in function len> in Series.agg cannot aggregate and has been deprecated. Use Series.transform to keep behavior unchanged.
+  split_point = np.cumsum(feat[field].agg(len))[:-1]
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:648: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  feat[field].fillna(value=0, inplace=True)
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/sequential_dataset.py:165: FutureWarning: using <built-in function len> in Series.agg cannot aggregate and has been deprecated. Use Series.transform to keep behavior unchanged.
+  ].agg(len)
+24 May 17:26    INFO  Musical_Instruments_Rich
+The number of users: 57440
+Average actions of users: 7.910949006772402
+The number of items: 24588
+Average actions of items: 18.484196395883334
+The number of inters: 454397
+The sparsity of the dataset: 99.96782653619108%
+Remain Fields: ['user_id', 'item_id_list', 'rating_list', 'time_gap_list', 'recency_list', 'item_id', 'item_length']
+24 May 17:26    INFO  [Training]: train_batch_size = [2048] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+24 May 17:26    INFO  [Evaluation]: eval_batch_size = [2048] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+24 May 17:26    INFO  RichUniSRec(
+  (item_embedding): Embedding(24588, 300, padding_idx=0)
+  (position_embedding): Embedding(50, 300)
+  (trm_encoder): TransformerEncoder(
+    (layer): ModuleList(
+      (0-2): 3 x TransformerLayer(
+        (multi_head_attention): MultiHeadAttention(
+          (query): Linear(in_features=300, out_features=300, bias=True)
+          (key): Linear(in_features=300, out_features=300, bias=True)
+          (value): Linear(in_features=300, out_features=300, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.3, inplace=False)
+          (dense): Linear(in_features=300, out_features=300, bias=True)
+          (LayerNorm): LayerNorm((300,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.3, inplace=False)
+        )
+        (feed_forward): FeedForward(
+          (dense_1): Linear(in_features=300, out_features=512, bias=True)
+          (dense_2): Linear(in_features=512, out_features=300, bias=True)
+          (LayerNorm): LayerNorm((300,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.3, inplace=False)
+        )
+      )
+    )
+  )
+  (LayerNorm): LayerNorm((300,), eps=1e-12, elementwise_affine=True)
+  (dropout): Dropout(p=0.3, inplace=False)
+  (loss_fct): CrossEntropyLoss()
+  (plm_embedding): Embedding(24588, 768, padding_idx=0)
+  (moe_adaptor): MoEAdaptorLayer(
+    (experts): ModuleList(
+      (0-7): 8 x PWLayer(
+        (dropout): Dropout(p=0.1, inplace=False)
+        (lin): Linear(in_features=768, out_features=300, bias=False)
+      )
+    )
+  )
+  (struct_embeddings): ModuleList(
+    (0): Embedding(9, 32, padding_idx=0)
+    (1): Embedding(11, 32, padding_idx=0)
+    (2-3): 2 x Embedding(22, 32, padding_idx=0)
+    (4): Embedding(567, 32, padding_idx=0)
+  )
+  (struct_projection): Linear(in_features=160, out_features=300, bias=True)
+  (rating_embedding): Embedding(6, 32, padding_idx=0)
+  (time_gap_embedding): Embedding(10, 32, padding_idx=0)
+  (recency_embedding): Embedding(51, 32, padding_idx=0)
+  (user_feature_projection): Linear(in_features=96, out_features=300, bias=True)
+)
+Trainable parameters: 11364604
+24 May 17:27    INFO  epoch 0 training [time: 49.98s, train loss: 1584.4318]
+24 May 17:27    INFO  epoch 0 evaluating [time: 2.24s, valid_score: 0.019600]
+24 May 17:27    INFO  valid result: 
+recall@10 : 0.0385    recall@50 : 0.1087    ndcg@10 : 0.0196    ndcg@50 : 0.0347
+24 May 17:27    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:28    INFO  epoch 1 training [time: 49.69s, train loss: 1471.1427]
+24 May 17:28    INFO  epoch 1 evaluating [time: 2.27s, valid_score: 0.025200]
+24 May 17:28    INFO  valid result: 
+recall@10 : 0.0499    recall@50 : 0.1292    ndcg@10 : 0.0252    ndcg@50 : 0.0423
+24 May 17:28    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:29    INFO  epoch 2 training [time: 49.77s, train loss: 1442.6900]
+24 May 17:29    INFO  epoch 2 evaluating [time: 2.28s, valid_score: 0.027900]
+24 May 17:29    INFO  valid result: 
+recall@10 : 0.0544    recall@50 : 0.1371    ndcg@10 : 0.0279    ndcg@50 : 0.0456
+24 May 17:29    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:30    INFO  epoch 3 training [time: 49.54s, train loss: 1426.6818]
+24 May 17:30    INFO  epoch 3 evaluating [time: 2.33s, valid_score: 0.029700]
+24 May 17:30    INFO  valid result: 
+recall@10 : 0.0577    recall@50 : 0.1464    ndcg@10 : 0.0297    ndcg@50 : 0.0488
+24 May 17:30    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:31    INFO  epoch 4 training [time: 49.86s, train loss: 1413.3455]
+24 May 17:31    INFO  epoch 4 evaluating [time: 2.26s, valid_score: 0.031300]
+24 May 17:31    INFO  valid result: 
+recall@10 : 0.0611    recall@50 : 0.1543    ndcg@10 : 0.0313    ndcg@50 : 0.0515
+24 May 17:31    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:32    INFO  epoch 5 training [time: 49.85s, train loss: 1401.9833]
+24 May 17:32    INFO  epoch 5 evaluating [time: 2.26s, valid_score: 0.032500]
+24 May 17:32    INFO  valid result: 
+recall@10 : 0.0638    recall@50 : 0.1604    ndcg@10 : 0.0325    ndcg@50 : 0.0534
+24 May 17:32    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:32    INFO  epoch 6 training [time: 49.85s, train loss: 1391.5182]
+24 May 17:33    INFO  epoch 6 evaluating [time: 2.23s, valid_score: 0.033800]
+24 May 17:33    INFO  valid result: 
+recall@10 : 0.0663    recall@50 : 0.1668    ndcg@10 : 0.0338    ndcg@50 : 0.0555
+24 May 17:33    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:33    INFO  epoch 7 training [time: 49.83s, train loss: 1382.4616]
+24 May 17:33    INFO  epoch 7 evaluating [time: 2.24s, valid_score: 0.034600]
+24 May 17:33    INFO  valid result: 
+recall@10 : 0.0682    recall@50 : 0.1693    ndcg@10 : 0.0346    ndcg@50 : 0.0565
+24 May 17:33    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:34    INFO  epoch 8 training [time: 49.68s, train loss: 1374.3132]
+24 May 17:34    INFO  epoch 8 evaluating [time: 2.22s, valid_score: 0.035600]
+24 May 17:34    INFO  valid result: 
+recall@10 : 0.07    recall@50 : 0.1741    ndcg@10 : 0.0356    ndcg@50 : 0.0581
+24 May 17:34    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:35    INFO  epoch 9 training [time: 49.60s, train loss: 1366.7389]
+24 May 17:35    INFO  epoch 9 evaluating [time: 2.24s, valid_score: 0.036100]
+24 May 17:35    INFO  valid result: 
+recall@10 : 0.0717    recall@50 : 0.1765    ndcg@10 : 0.0361    ndcg@50 : 0.0589
+24 May 17:35    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:36    INFO  epoch 10 training [time: 49.62s, train loss: 1359.3464]
+24 May 17:36    INFO  epoch 10 evaluating [time: 2.24s, valid_score: 0.036400]
+24 May 17:36    INFO  valid result: 
+recall@10 : 0.073    recall@50 : 0.1783    ndcg@10 : 0.0364    ndcg@50 : 0.0592
+24 May 17:36    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:37    INFO  epoch 11 training [time: 49.74s, train loss: 1353.3595]
+24 May 17:37    INFO  epoch 11 evaluating [time: 2.25s, valid_score: 0.036800]
+24 May 17:37    INFO  valid result: 
+recall@10 : 0.0736    recall@50 : 0.1808    ndcg@10 : 0.0368    ndcg@50 : 0.06
+24 May 17:37    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:38    INFO  epoch 12 training [time: 49.82s, train loss: 1346.7610]
+24 May 17:38    INFO  epoch 12 evaluating [time: 2.24s, valid_score: 0.036500]
+24 May 17:38    INFO  valid result: 
+recall@10 : 0.0735    recall@50 : 0.1814    ndcg@10 : 0.0365    ndcg@50 : 0.0599
+24 May 17:39    INFO  epoch 13 training [time: 49.66s, train loss: 1340.6386]
+24 May 17:39    INFO  epoch 13 evaluating [time: 2.24s, valid_score: 0.036900]
+24 May 17:39    INFO  valid result: 
+recall@10 : 0.0751    recall@50 : 0.1828    ndcg@10 : 0.0369    ndcg@50 : 0.0603
+24 May 17:39    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:39    INFO  epoch 14 training [time: 49.69s, train loss: 1334.8681]
+24 May 17:40    INFO  epoch 14 evaluating [time: 2.23s, valid_score: 0.036200]
+24 May 17:40    INFO  valid result: 
+recall@10 : 0.0749    recall@50 : 0.183    ndcg@10 : 0.0362    ndcg@50 : 0.0597
+24 May 17:40    INFO  epoch 15 training [time: 49.80s, train loss: 1329.5570]
+24 May 17:40    INFO  epoch 15 evaluating [time: 2.25s, valid_score: 0.036900]
+24 May 17:40    INFO  valid result: 
+recall@10 : 0.0759    recall@50 : 0.1857    ndcg@10 : 0.0369    ndcg@50 : 0.0607
+24 May 17:40    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:41    INFO  epoch 16 training [time: 49.73s, train loss: 1324.4312]
+24 May 17:41    INFO  epoch 16 evaluating [time: 2.26s, valid_score: 0.037500]
+24 May 17:41    INFO  valid result: 
+recall@10 : 0.077    recall@50 : 0.1871    ndcg@10 : 0.0375    ndcg@50 : 0.0614
+24 May 17:41    INFO  Saving current: checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:42    INFO  epoch 17 training [time: 49.79s, train loss: 1318.9305]
+24 May 17:42    INFO  epoch 17 evaluating [time: 2.26s, valid_score: 0.036400]
+24 May 17:42    INFO  valid result: 
+recall@10 : 0.0761    recall@50 : 0.1864    ndcg@10 : 0.0364    ndcg@50 : 0.0604
+24 May 17:43    INFO  epoch 18 training [time: 49.67s, train loss: 1313.9701]
+24 May 17:43    INFO  epoch 18 evaluating [time: 2.23s, valid_score: 0.036300]
+24 May 17:43    INFO  valid result: 
+recall@10 : 0.0763    recall@50 : 0.1872    ndcg@10 : 0.0363    ndcg@50 : 0.0604
+24 May 17:44    INFO  epoch 19 training [time: 49.71s, train loss: 1309.2638]
+24 May 17:44    INFO  epoch 19 evaluating [time: 2.25s, valid_score: 0.036300]
+24 May 17:44    INFO  valid result: 
+recall@10 : 0.076    recall@50 : 0.1869    ndcg@10 : 0.0363    ndcg@50 : 0.0604
+24 May 17:45    INFO  epoch 20 training [time: 49.72s, train loss: 1304.2377]
+24 May 17:45    INFO  epoch 20 evaluating [time: 2.22s, valid_score: 0.036700]
+24 May 17:45    INFO  valid result: 
+recall@10 : 0.0779    recall@50 : 0.1889    ndcg@10 : 0.0367    ndcg@50 : 0.0607
+24 May 17:46    INFO  epoch 21 training [time: 49.63s, train loss: 1299.1945]
+24 May 17:46    INFO  epoch 21 evaluating [time: 2.25s, valid_score: 0.035900]
+24 May 17:46    INFO  valid result: 
+recall@10 : 0.077    recall@50 : 0.1875    ndcg@10 : 0.0359    ndcg@50 : 0.0599
+24 May 17:46    INFO  epoch 22 training [time: 49.70s, train loss: 1294.7628]
+24 May 17:46    INFO  epoch 22 evaluating [time: 2.25s, valid_score: 0.036000]
+24 May 17:46    INFO  valid result: 
+recall@10 : 0.077    recall@50 : 0.1886    ndcg@10 : 0.036    ndcg@50 : 0.0602
+24 May 17:47    INFO  epoch 23 training [time: 49.90s, train loss: 1290.6133]
+24 May 17:47    INFO  epoch 23 evaluating [time: 2.24s, valid_score: 0.035600]
+24 May 17:47    INFO  valid result: 
+recall@10 : 0.0769    recall@50 : 0.1874    ndcg@10 : 0.0356    ndcg@50 : 0.0595
+24 May 17:48    INFO  epoch 24 training [time: 49.46s, train loss: 1285.7597]
+24 May 17:48    INFO  epoch 24 evaluating [time: 2.25s, valid_score: 0.035300]
+24 May 17:48    INFO  valid result: 
+recall@10 : 0.0765    recall@50 : 0.1876    ndcg@10 : 0.0353    ndcg@50 : 0.0595
+24 May 17:49    INFO  epoch 25 training [time: 49.55s, train loss: 1281.2114]
+24 May 17:49    INFO  epoch 25 evaluating [time: 2.24s, valid_score: 0.035400]
+24 May 17:49    INFO  valid result: 
+recall@10 : 0.077    recall@50 : 0.1872    ndcg@10 : 0.0354    ndcg@50 : 0.0594
+24 May 17:50    INFO  epoch 26 training [time: 49.65s, train loss: 1277.1522]
+24 May 17:50    INFO  epoch 26 evaluating [time: 2.23s, valid_score: 0.035400]
+24 May 17:50    INFO  valid result: 
+recall@10 : 0.077    recall@50 : 0.1875    ndcg@10 : 0.0354    ndcg@50 : 0.0594
+24 May 17:51    INFO  epoch 27 training [time: 49.74s, train loss: 1272.6656]
+24 May 17:51    INFO  epoch 27 evaluating [time: 2.25s, valid_score: 0.035000]
+24 May 17:51    INFO  valid result: 
+recall@10 : 0.0765    recall@50 : 0.187    ndcg@10 : 0.035    ndcg@50 : 0.0591
+24 May 17:51    INFO  Finished training, best eval result in epoch 16
+24 May 17:51    INFO  Loading model structure and parameters from checkpoints/RichUniSRec-May-24-2026_17-26-54.pth
+24 May 17:51    INFO  best valid : OrderedDict([('recall@10', 0.077), ('recall@50', 0.1871), ('ndcg@10', 0.0375), ('ndcg@50', 0.0614)])
+24 May 17:51    INFO  test result: OrderedDict([('recall@10', 0.0712), ('recall@50', 0.1713), ('ndcg@10', 0.035), ('ndcg@50', 0.0567)])

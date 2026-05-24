@@ -1,0 +1,262 @@
+command line args [-m GRU4Rec -d Industrial_and_Scientific --epochs 180 --stopping_step 15 --tag industrial-gru4rec-main --result_file results/experiment_results.jsonl --checkpoint_dir checkpoints --show_progress false] will not be used in RecBole
+24 May 14:47    INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = dataset/processed/Industrial_and_Scientific
+checkpoint_dir = checkpoints
+show_progress = False
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 180
+train_batch_size = 2048
+learner = adamw
+learning_rate = 0.001
+train_neg_sample_args = {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 15
+clip_grad_norm = None
+weight_decay = 0.0
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = True
+metrics = ['Recall', 'NDCG']
+topk = [10, 50]
+valid_metric = NDCG@10
+valid_metric_bigger = True
+eval_batch_size = 2048
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = timestamp
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id_list', 'item_id']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [0,inf)
+item_inter_num_interval = [0,inf)
+alias_of_user_id = None
+alias_of_item_id = ['item_id_list']
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = ['train', 'valid', 'test']
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+embedding_size = 300
+hidden_size = 300
+num_layers = 1
+dropout_prob = 0.2
+loss_type = CE
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.SEQUENTIAL
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+single_spec = True
+local_rank = 0
+device = cuda
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+
+
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:501: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  df[field].fillna(value="", inplace=True)
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:501: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  df[field].fillna(value="", inplace=True)
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:501: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  df[field].fillna(value="", inplace=True)
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:1217: FutureWarning: using <built-in function len> in Series.agg cannot aggregate and has been deprecated. Use Series.transform to keep behavior unchanged.
+  split_point = np.cumsum(feat[field].agg(len))[:-1]
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/dataset.py:648: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  feat[field].fillna(value=0, inplace=True)
+/root/miniconda3/lib/python3.10/site-packages/recbole/data/dataset/sequential_dataset.py:165: FutureWarning: using <built-in function len> in Series.agg cannot aggregate and has been deprecated. Use Series.transform to keep behavior unchanged.
+  ].agg(len)
+24 May 14:47    INFO  Industrial_and_Scientific
+The number of users: 50986
+Average actions of users: 7.099382171226831
+The number of items: 25849
+Average actions of items: 14.00510737086477
+The number of inters: 361962
+The sparsity of the dataset: 99.9725357153877%
+Remain Fields: ['user_id', 'item_id_list', 'item_id', 'item_length']
+24 May 14:47    INFO  [Training]: train_batch_size = [2048] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+24 May 14:47    INFO  [Evaluation]: eval_batch_size = [2048] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+24 May 14:47    INFO  GRU4Rec(
+  (item_embedding): Embedding(25849, 300, padding_idx=0)
+  (emb_dropout): Dropout(p=0.2, inplace=False)
+  (gru_layers): GRU(300, 300, bias=False, batch_first=True)
+  (dense): Linear(in_features=300, out_features=300, bias=True)
+  (loss_fct): CrossEntropyLoss()
+)
+Trainable parameters: 8385000
+24 May 14:47    INFO  epoch 0 training [time: 9.55s, train loss: 1239.0600]
+24 May 14:47    INFO  epoch 0 evaluating [time: 1.80s, valid_score: 0.012000]
+24 May 14:47    INFO  valid result: 
+recall@10 : 0.023    recall@50 : 0.0633    ndcg@10 : 0.012    ndcg@50 : 0.0207
+24 May 14:47    INFO  Saving current: checkpoints/GRU4Rec-May-24-2026_14-47-13.pth
+24 May 14:47    INFO  epoch 1 training [time: 9.31s, train loss: 1163.6577]
+24 May 14:47    INFO  epoch 1 evaluating [time: 1.64s, valid_score: 0.014600]
+24 May 14:47    INFO  valid result: 
+recall@10 : 0.0284    recall@50 : 0.0785    ndcg@10 : 0.0146    ndcg@50 : 0.0253
+24 May 14:47    INFO  Saving current: checkpoints/GRU4Rec-May-24-2026_14-47-13.pth
+24 May 14:47    INFO  epoch 2 training [time: 9.16s, train loss: 1118.8786]
+24 May 14:47    INFO  epoch 2 evaluating [time: 1.73s, valid_score: 0.017700]
+24 May 14:47    INFO  valid result: 
+recall@10 : 0.034    recall@50 : 0.0929    ndcg@10 : 0.0177    ndcg@50 : 0.0303
+24 May 14:47    INFO  Saving current: checkpoints/GRU4Rec-May-24-2026_14-47-13.pth
+24 May 14:47    INFO  epoch 3 training [time: 9.28s, train loss: 1084.2252]
+24 May 14:47    INFO  epoch 3 evaluating [time: 1.81s, valid_score: 0.019500]
+24 May 14:47    INFO  valid result: 
+recall@10 : 0.0379    recall@50 : 0.1018    ndcg@10 : 0.0195    ndcg@50 : 0.0333
+24 May 14:47    INFO  Saving current: checkpoints/GRU4Rec-May-24-2026_14-47-13.pth
+24 May 14:48    INFO  epoch 4 training [time: 9.16s, train loss: 1057.4109]
+24 May 14:48    INFO  epoch 4 evaluating [time: 1.70s, valid_score: 0.020900]
+24 May 14:48    INFO  valid result: 
+recall@10 : 0.0409    recall@50 : 0.1045    ndcg@10 : 0.0209    ndcg@50 : 0.0346
+24 May 14:48    INFO  Saving current: checkpoints/GRU4Rec-May-24-2026_14-47-13.pth
+24 May 14:48    INFO  epoch 5 training [time: 9.51s, train loss: 1033.1480]
+24 May 14:48    INFO  epoch 5 evaluating [time: 1.88s, valid_score: 0.021200]
+24 May 14:48    INFO  valid result: 
+recall@10 : 0.0409    recall@50 : 0.1055    ndcg@10 : 0.0212    ndcg@50 : 0.0351
+24 May 14:48    INFO  Saving current: checkpoints/GRU4Rec-May-24-2026_14-47-13.pth
+24 May 14:48    INFO  epoch 6 training [time: 9.23s, train loss: 1009.6332]
+24 May 14:48    INFO  epoch 6 evaluating [time: 1.74s, valid_score: 0.021500]
+24 May 14:48    INFO  valid result: 
+recall@10 : 0.042    recall@50 : 0.1061    ndcg@10 : 0.0215    ndcg@50 : 0.0353
+24 May 14:48    INFO  Saving current: checkpoints/GRU4Rec-May-24-2026_14-47-13.pth
+24 May 14:48    INFO  epoch 7 training [time: 9.19s, train loss: 985.1079]
+24 May 14:48    INFO  epoch 7 evaluating [time: 1.78s, valid_score: 0.021500]
+24 May 14:48    INFO  valid result: 
+recall@10 : 0.0406    recall@50 : 0.1041    ndcg@10 : 0.0215    ndcg@50 : 0.0351
+24 May 14:48    INFO  Saving current: checkpoints/GRU4Rec-May-24-2026_14-47-13.pth
+24 May 14:48    INFO  epoch 8 training [time: 9.51s, train loss: 958.6409]
+24 May 14:48    INFO  epoch 8 evaluating [time: 1.79s, valid_score: 0.019700]
+24 May 14:48    INFO  valid result: 
+recall@10 : 0.0379    recall@50 : 0.098    ndcg@10 : 0.0197    ndcg@50 : 0.0327
+24 May 14:49    INFO  epoch 9 training [time: 9.52s, train loss: 930.1404]
+24 May 14:49    INFO  epoch 9 evaluating [time: 1.58s, valid_score: 0.019100]
+24 May 14:49    INFO  valid result: 
+recall@10 : 0.0357    recall@50 : 0.0934    ndcg@10 : 0.0191    ndcg@50 : 0.0316
+24 May 14:49    INFO  epoch 10 training [time: 9.30s, train loss: 900.1530]
+24 May 14:49    INFO  epoch 10 evaluating [time: 1.77s, valid_score: 0.018300]
+24 May 14:49    INFO  valid result: 
+recall@10 : 0.0351    recall@50 : 0.0892    ndcg@10 : 0.0183    ndcg@50 : 0.0299
+24 May 14:49    INFO  epoch 11 training [time: 9.53s, train loss: 868.3577]
+24 May 14:49    INFO  epoch 11 evaluating [time: 1.70s, valid_score: 0.016900]
+24 May 14:49    INFO  valid result: 
+recall@10 : 0.0321    recall@50 : 0.0847    ndcg@10 : 0.0169    ndcg@50 : 0.0282
+24 May 14:49    INFO  epoch 12 training [time: 9.51s, train loss: 834.6144]
+24 May 14:49    INFO  epoch 12 evaluating [time: 1.79s, valid_score: 0.016300]
+24 May 14:49    INFO  valid result: 
+recall@10 : 0.0303    recall@50 : 0.0796    ndcg@10 : 0.0163    ndcg@50 : 0.0269
+24 May 14:49    INFO  epoch 13 training [time: 9.70s, train loss: 799.2825]
+24 May 14:49    INFO  epoch 13 evaluating [time: 1.78s, valid_score: 0.015600]
+24 May 14:49    INFO  valid result: 
+recall@10 : 0.0291    recall@50 : 0.0757    ndcg@10 : 0.0156    ndcg@50 : 0.0256
+24 May 14:50    INFO  epoch 14 training [time: 9.23s, train loss: 762.1734]
+24 May 14:50    INFO  epoch 14 evaluating [time: 1.81s, valid_score: 0.014500]
+24 May 14:50    INFO  valid result: 
+recall@10 : 0.0274    recall@50 : 0.0725    ndcg@10 : 0.0145    ndcg@50 : 0.0241
+24 May 14:50    INFO  epoch 15 training [time: 9.46s, train loss: 724.5195]
+24 May 14:50    INFO  epoch 15 evaluating [time: 1.70s, valid_score: 0.013900]
+24 May 14:50    INFO  valid result: 
+recall@10 : 0.0261    recall@50 : 0.0698    ndcg@10 : 0.0139    ndcg@50 : 0.0232
+24 May 14:50    INFO  epoch 16 training [time: 9.21s, train loss: 686.3440]
+24 May 14:50    INFO  epoch 16 evaluating [time: 1.61s, valid_score: 0.012900]
+24 May 14:50    INFO  valid result: 
+recall@10 : 0.0243    recall@50 : 0.067    ndcg@10 : 0.0129    ndcg@50 : 0.022
+24 May 14:50    INFO  epoch 17 training [time: 9.39s, train loss: 649.2200]
+24 May 14:50    INFO  epoch 17 evaluating [time: 1.71s, valid_score: 0.012700]
+24 May 14:50    INFO  valid result: 
+recall@10 : 0.0235    recall@50 : 0.0656    ndcg@10 : 0.0127    ndcg@50 : 0.0217
+24 May 14:50    INFO  epoch 18 training [time: 9.26s, train loss: 612.8009]
+24 May 14:50    INFO  epoch 18 evaluating [time: 1.69s, valid_score: 0.012400]
+24 May 14:50    INFO  valid result: 
+recall@10 : 0.0237    recall@50 : 0.0635    ndcg@10 : 0.0124    ndcg@50 : 0.021
+24 May 14:50    INFO  epoch 19 training [time: 9.13s, train loss: 577.0053]
+24 May 14:50    INFO  epoch 19 evaluating [time: 1.70s, valid_score: 0.012700]
+24 May 14:50    INFO  valid result: 
+recall@10 : 0.0238    recall@50 : 0.0656    ndcg@10 : 0.0127    ndcg@50 : 0.0217
+24 May 14:51    INFO  epoch 20 training [time: 8.99s, train loss: 543.5042]
+24 May 14:51    INFO  epoch 20 evaluating [time: 1.72s, valid_score: 0.011400]
+24 May 14:51    INFO  valid result: 
+recall@10 : 0.0213    recall@50 : 0.0618    ndcg@10 : 0.0114    ndcg@50 : 0.0201
+24 May 14:51    INFO  epoch 21 training [time: 9.07s, train loss: 511.6098]
+24 May 14:51    INFO  epoch 21 evaluating [time: 1.73s, valid_score: 0.011200]
+24 May 14:51    INFO  valid result: 
+recall@10 : 0.021    recall@50 : 0.0603    ndcg@10 : 0.0112    ndcg@50 : 0.0196
+24 May 14:51    INFO  epoch 22 training [time: 8.85s, train loss: 481.6813]
+24 May 14:51    INFO  epoch 22 evaluating [time: 1.54s, valid_score: 0.011100]
+24 May 14:51    INFO  valid result: 
+recall@10 : 0.0208    recall@50 : 0.0604    ndcg@10 : 0.0111    ndcg@50 : 0.0196
+24 May 14:51    INFO  epoch 23 training [time: 9.35s, train loss: 454.1456]
+24 May 14:51    INFO  epoch 23 evaluating [time: 1.69s, valid_score: 0.010700]
+24 May 14:51    INFO  valid result: 
+recall@10 : 0.0201    recall@50 : 0.058    ndcg@10 : 0.0107    ndcg@50 : 0.0187
+24 May 14:51    INFO  Finished training, best eval result in epoch 7
+24 May 14:51    INFO  Loading model structure and parameters from checkpoints/GRU4Rec-May-24-2026_14-47-13.pth
+24 May 14:51    INFO  best valid : OrderedDict([('recall@10', 0.0406), ('recall@50', 0.1041), ('ndcg@10', 0.0215), ('ndcg@50', 0.0351)])
+24 May 14:51    INFO  test result: OrderedDict([('recall@10', 0.0326), ('recall@50', 0.0882), ('ndcg@10', 0.0169), ('ndcg@50', 0.0288)])

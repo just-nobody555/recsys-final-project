@@ -1,0 +1,6 @@
+﻿dataset,final_tag,method,test_recall@10,test_ndcg@10,test_recall@50,test_ndcg@50,baseline_model,baseline_ndcg@10,abs_lift_ndcg@10,pct_lift_ndcg@10
+Musical_Instruments,mi-rrf-rich-8-1-1-1-8,RRF(UniSRec+SASRec+GRU4Rec+NARM+RichUniSRec),0.0739393095,0.0382957621,0.1787809676,0.0609682457,UniSRec,0.0340,0.0042957621,12.63%
+Industrial_and_Scientific,industrial-rrf-rich-4-1-1-1-8,RRF(UniSRec+SASRec+GRU4Rec+NARM+RichUniSRec),0.0612336962,0.0311200697,0.1468863391,0.0496915971,UniSRec,0.0267,0.0044200697,16.55%
+CDs_and_Vinyl,cds-rrf-rich-fine-k60-1-0p04-0p04-0p04,RRF(RichUniSRec+SASRec+GRU4Rec+NARM),0.1166246892,0.0552535380,0.2407488133,0.0825399862,UniSRec,0.0368,0.0184535380,50.15%
+MacroAverage,final_best_by_dataset,mixed,0.0839325649,0.0415564566,0.1888053734,0.0643999430,UniSRec,0.0325,0.0090564566,27.87%
+

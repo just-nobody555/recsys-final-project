@@ -1,0 +1,34 @@
+{
+  "tag": "industrial-rrf-rich-4-1-1-1-8",
+  "model": "RRF",
+  "dataset": "Industrial_and_Scientific",
+  "ranklists": [
+    "ranklists/industrial-inductive-baseline-test.jsonl",
+    "ranklists/industrial-sasrec-main-test.jsonl",
+    "ranklists/industrial-gru4rec-main-test.jsonl",
+    "ranklists/industrial-narm-main-test.jsonl",
+    "ranklists/industrial-richunisrec-main-test.jsonl"
+  ],
+  "weights": [
+    4,
+    1,
+    1,
+    1,
+    8
+  ],
+  "rrf_k": 60.0,
+  "topk": 200,
+  "metrics": {
+    "recall@50": 0.14688633911934884,
+    "ndcg@50": 0.04969159710407503,
+    "recall@10": 0.061233696185152495,
+    "ndcg@10": 0.031120069650833457
+  },
+  "labels": [
+    "uni",
+    "sas",
+    "gru",
+    "narm",
+    "rich"
+  ]
+}

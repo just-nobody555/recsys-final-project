@@ -1,0 +1,14 @@
+{
+  "recall@10": 0.06798516687268233,
+  "recall@50": 0.1668204530023155,
+  "ndcg@50": 0.05608509620763031,
+  "ndcg@10": 0.034678046430432534,
+  "model": "UniSRec",
+  "dataset": "Musical_Instruments",
+  "split": "test",
+  "checkpoint": "checkpoints/mi-transductive-lr5e5-best.pth",
+  "ranklist_file": "ranklists/mi-transductive-lr5e5-test.jsonl",
+  "num_rows": 57439,
+  "missing_keys": [],
+  "unexpected_keys": []
+}

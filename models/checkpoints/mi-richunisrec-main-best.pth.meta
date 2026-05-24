@@ -1,0 +1,28 @@
+{
+  "tag": "mi-richunisrec-main",
+  "source_checkpoint": "checkpoints/RichUniSRec-May-24-2026_17-26-54.pth",
+  "backup_checkpoint": "checkpoints/mi-richunisrec-main-best.pth",
+  "sha256": "b45e9cf9fa5ebb6d276f037d1019768e5bed844532ca647f31c951fb231e631c",
+  "model": "RichUniSRec",
+  "dataset": "Musical_Instruments_Rich",
+  "test_result": {
+    "recall@10": 0.0712,
+    "recall@50": 0.1713,
+    "ndcg@10": 0.035,
+    "ndcg@50": 0.0567
+  },
+  "best_valid_result": {
+    "recall@10": 0.077,
+    "recall@50": 0.1871,
+    "ndcg@10": 0.0375,
+    "ndcg@50": 0.0614
+  },
+  "config_overrides": {
+    "epochs": 100,
+    "learning_rate": 5e-05,
+    "train_stage": "transductive_ft",
+    "stopping_step": 10,
+    "show_progress": false,
+    "checkpoint_dir": "checkpoints"
+  }
+}

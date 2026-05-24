@@ -1,0 +1,26 @@
+{
+  "tag": "industrial-narm-main",
+  "source_checkpoint": "checkpoints/NARM-May-24-2026_14-51-51.pth",
+  "backup_checkpoint": "checkpoints/industrial-narm-main-best.pth",
+  "sha256": "579c57b3571b38e4471982aa93fba19a155ac857ba05a6ad3569d9d134e8be09",
+  "model": "NARM",
+  "dataset": "Industrial_and_Scientific",
+  "test_result": {
+    "recall@10": 0.0332,
+    "recall@50": 0.0894,
+    "ndcg@10": 0.0171,
+    "ndcg@50": 0.0291
+  },
+  "best_valid_result": {
+    "recall@10": 0.0419,
+    "recall@50": 0.1073,
+    "ndcg@10": 0.0218,
+    "ndcg@50": 0.0359
+  },
+  "config_overrides": {
+    "epochs": 180,
+    "stopping_step": 15,
+    "show_progress": false,
+    "checkpoint_dir": "checkpoints"
+  }
+}

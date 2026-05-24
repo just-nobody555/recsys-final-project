@@ -1,0 +1,25 @@
+{
+  "tag": "mi-rrf-u2-s1",
+  "model": "RRF",
+  "dataset": "Musical_Instruments",
+  "ranklists": [
+    "ranklists/mi-transductive-lr5e5-test.jsonl",
+    "ranklists/mi-sasrec-main-test.jsonl",
+    "ranklists/mi-gru4rec-main-test.jsonl",
+    "ranklists/mi-narm-main-test.jsonl"
+  ],
+  "weights": [
+    2.0,
+    1.0,
+    0.0,
+    0.0
+  ],
+  "rrf_k": 60.0,
+  "topk": 200,
+  "metrics": {
+    "recall@50": 0.16934487021013597,
+    "ndcg@50": 0.05720729807114391,
+    "recall@10": 0.06812444506345862,
+    "ndcg@10": 0.03529737340440512
+  }
+}

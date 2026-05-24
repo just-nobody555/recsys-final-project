@@ -1,0 +1,14 @@
+{
+  "recall@10": 0.0519159456118665,
+  "recall@50": 0.12615122129563536,
+  "ndcg@50": 0.04311598012774622,
+  "ndcg@10": 0.027076492479928438,
+  "model": "GRU4Rec",
+  "dataset": "Musical_Instruments",
+  "split": "test",
+  "checkpoint": "checkpoints/mi-gru4rec-main-best.pth",
+  "ranklist_file": "ranklists/mi-gru4rec-main-test.jsonl",
+  "num_rows": 57439,
+  "missing_keys": [],
+  "unexpected_keys": []
+}

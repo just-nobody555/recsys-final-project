@@ -1,0 +1,14 @@
+{
+  "recall@10": 0.03261743650093165,
+  "recall@50": 0.08822202608610376,
+  "ndcg@50": 0.028829043564857947,
+  "ndcg@10": 0.016866194357328775,
+  "model": "GRU4Rec",
+  "dataset": "Industrial_and_Scientific",
+  "split": "test",
+  "checkpoint": "checkpoints/industrial-gru4rec-main-best.pth",
+  "ranklist_file": "ranklists/industrial-gru4rec-main-test.jsonl",
+  "num_rows": 50985,
+  "missing_keys": [],
+  "unexpected_keys": []
+}

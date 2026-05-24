@@ -1,0 +1,14 @@
+{
+  "recall@10": 0.05868392664509169,
+  "recall@50": 0.14113955084828872,
+  "ndcg@50": 0.04628572870293567,
+  "ndcg@10": 0.028407627912718805,
+  "model": "RichUniSRec",
+  "dataset": "Industrial_and_Scientific_Rich",
+  "split": "test",
+  "checkpoint": "checkpoints/industrial-richunisrec-main-best.pth",
+  "ranklist_file": "ranklists/industrial-richunisrec-main-test.jsonl",
+  "num_rows": 50985,
+  "missing_keys": [],
+  "unexpected_keys": []
+}
