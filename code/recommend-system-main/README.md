@@ -79,3 +79,13 @@ RRF 融合：
 ```bash
 python scripts/rrf_fusion.py results/model1.jsonl results/model2.jsonl --weights 1,1 --output-ranklist results/fused.jsonl
 ```
+
+## 使用 checkpoint 复现最终结果
+
+完整 checkpoint 位于仓库根目录的 `models/checkpoints/`。完成数据下载和处理后，在本目录运行：
+
+```bash
+bash scripts/reproduce_from_checkpoints.sh
+```
+
+脚本会加载 `models/checkpoints/*.pth`，重新导出三个数据集的 test ranklist，执行 RRF 融合，并调用仓库根目录的 `evaluate_ndcg10.py` 复算 Recall@10 和 NDCG@10。

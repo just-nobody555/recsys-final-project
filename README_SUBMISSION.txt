@@ -33,3 +33,7 @@ git clone https://github.com/just-nobody555/recsys-final-project.git
 cd recsys-final-project
 git lfs pull
 然后进入 code/recommend-system-main/，安装 requirements.txt 中的依赖；使用 scripts/download_course_data.py 下载作业 PDF 中的三类数据，并用 dataset/process_amazon.py 处理数据。模型配置在 config/，checkpoint 在 models/checkpoints/。
+
+使用 checkpoint 重新导出最终结果：
+cd code/recommend-system-main
+bash scripts/reproduce_from_checkpoints.sh

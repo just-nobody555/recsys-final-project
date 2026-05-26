@@ -63,3 +63,10 @@ git lfs pull
 ```
 
 之后进入 `code/recommend-system-main/`，安装 `requirements.txt` 中的依赖；用 `scripts/download_course_data.py` 下载作业 PDF 中的三类数据，用 `dataset/process_amazon.py` 处理数据。模型配置在 `config/`，checkpoint 在 `models/checkpoints/`。
+
+处理好数据后，可直接加载已训练 checkpoint 重新导出最终结果：
+
+```bash
+cd code/recommend-system-main
+bash scripts/reproduce_from_checkpoints.sh
+```
