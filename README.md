@@ -11,7 +11,7 @@
 ## 目录说明
 
 - `code/recommend-system-main/`：模型训练、数据处理和融合代码
-- `report.docx`：实验报告，组员信息处提交前补充即可
+- `report.docx`：实验报告
 - `final_results.csv`：三个数据集的最终测试结果
 - `results_top10/`：三个数据集最终方法输出的 Top-10 推荐结果
 - `evaluate_ndcg10.py`：根据 Top-10 结果复算 Recall@10 和 NDCG@10
@@ -51,3 +51,15 @@ python evaluate_ndcg10.py \
 ```
 
 复算结果应与 `final_results.csv` 中的 `NDCG@10` 一致。
+
+## 完整复现
+
+邮件提交包不包含 checkpoint。完整模型参数保存在 GitHub 仓库的 `models/checkpoints/` 中，使用 Git LFS 管理：
+
+```bash
+git clone https://github.com/just-nobody555/recsys-final-project.git
+cd recsys-final-project
+git lfs pull
+```
+
+之后进入 `code/recommend-system-main/`，安装 `requirements.txt` 中的依赖；用 `scripts/download_course_data.py` 下载作业 PDF 中的三类数据，用 `dataset/process_amazon.py` 处理数据。模型配置在 `config/`，checkpoint 在 `models/checkpoints/`。
