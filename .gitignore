@@ -5,7 +5,6 @@ __pycache__/
 dataset/data/
 dataset/processed/
 checkpoints/
-models/checkpoints/
 logs/
 
 *.pth
@@ -13,3 +12,9 @@ logs/
 *.pid
 ~$*.docx
 .DS_Store
+
+!models/
+!models/checkpoints/
+!models/checkpoints/*.pth
+!models/checkpoints/*.meta
+!models/checkpoints/*.sha256

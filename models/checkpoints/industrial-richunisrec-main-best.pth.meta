@@ -1,0 +1,28 @@
+{
+  "tag": "industrial-richunisrec-main",
+  "source_checkpoint": "checkpoints/RichUniSRec-May-24-2026_18-13-46.pth",
+  "backup_checkpoint": "checkpoints/industrial-richunisrec-main-best.pth",
+  "sha256": "3ff31102168dd4f0806585a100df846226621816804bc43bfab3764be846a651",
+  "model": "RichUniSRec",
+  "dataset": "Industrial_and_Scientific_Rich",
+  "test_result": {
+    "recall@10": 0.0587,
+    "recall@50": 0.1411,
+    "ndcg@10": 0.0284,
+    "ndcg@50": 0.0463
+  },
+  "best_valid_result": {
+    "recall@10": 0.0714,
+    "recall@50": 0.1619,
+    "ndcg@10": 0.0336,
+    "ndcg@50": 0.0533
+  },
+  "config_overrides": {
+    "epochs": 100,
+    "learning_rate": 5e-05,
+    "train_stage": "transductive_ft",
+    "stopping_step": 10,
+    "show_progress": false,
+    "checkpoint_dir": "checkpoints"
+  }
+}

@@ -15,8 +15,9 @@
 - `final_results.csv`：三个数据集的最终测试结果
 - `results_top10/`：三个数据集最终方法输出的 Top-10 推荐结果
 - `evaluate_ndcg10.py`：根据 Top-10 结果复算 Recall@10 和 NDCG@10
+- `models/checkpoints/`：主要实验的模型参数文件，使用 Git LFS 管理
 
-仓库中不包含原始数据、处理后的特征文件和模型 checkpoint，这些文件体积较大，按脚本重新下载和生成即可。
+仓库中不包含原始数据和处理后的特征文件，这些文件体积较大，按脚本重新下载和生成即可。模型参数文件保存在 `models/checkpoints/`，克隆仓库后需要执行 `git lfs pull` 下载完整 checkpoint。
 
 ## 最终结果
 
