@@ -29,7 +29,7 @@
 | Industrial_and_Scientific | 50985 | 0.0612 | 0.0311 |
 | CDs_and_Vinyl | 123876 | 0.1166 | 0.0553 |
 | Macro Average | 232300 | 0.0839 | 0.0416 |
-| Weighted Average | 232300 |  | 0.0458 |
+| Weighted Average | 232300 | 0.0939 | 0.0458 |
 
 ## 结果复算
 
