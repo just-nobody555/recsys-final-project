@@ -59,9 +59,7 @@ git lfs pull
 cd code/recommend-system-main
 pip install -r requirements.txt
 python scripts/check_environment.py
-python scripts/download_course_data.py --domain Musical_Instruments
-python scripts/download_course_data.py --domain Industrial_and_Scientific
-python scripts/download_course_data.py --domain CDs_and_Vinyl
+DEVICE=cuda bash scripts/prepare_all_datasets.sh
 ```
 
 数据处理完成后，加载已训练 checkpoint 重新导出最终结果：

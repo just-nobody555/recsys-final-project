@@ -30,6 +30,14 @@ python scripts/download_course_data.py --domain CDs_and_Vinyl
 
 ## 数据处理
 
+如需一次性准备三个数据集及对应的 rich 数据集，可以运行：
+
+```bash
+DEVICE=cuda bash scripts/prepare_all_datasets.sh
+```
+
+也可以单独处理某个数据集。
+
 普通数据：
 
 ```bash
@@ -69,6 +77,7 @@ python run.py -m RichUniSRec -d Musical_Instruments_Rich --show_progress false
 完整 checkpoint 位于仓库根目录的 `models/checkpoints/`。完成数据下载和处理后，在本目录运行：
 
 ```bash
+DEVICE=cuda bash scripts/prepare_all_datasets.sh
 bash scripts/reproduce_from_checkpoints.sh
 ```
 

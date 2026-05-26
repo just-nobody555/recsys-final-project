@@ -32,7 +32,7 @@ def parse_args():
     parser.add_argument('--input_dir', type=str, default='dataset/data', help='directory containing raw datasets')
     parser.add_argument('--max_his_len', type=int, default=50, help='maximum length of the history')
     parser.add_argument('--n_workers', type=int, default=16, help='number of worker threads for parallel processing')
-    parser.add_argument('--output_dir', type=str, default='processed/', help='directory to save the processed datasets')
+    parser.add_argument('--output_dir', type=str, default='dataset/processed', help='directory to save the processed datasets')
     parser.add_argument('--output_domain', type=str, default=None, help='processed dataset name, defaults to --domain')
     parser.add_argument('--device', type=str, default='mps', help='device to use')
     parser.add_argument('--plm', type=str, default='hyp1231/blair-roberta-base', help='pretrained language model to use')
