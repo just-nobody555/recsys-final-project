@@ -406,7 +406,6 @@ if __name__ == '__main__':
         sys.exit(0)
 
     device = torch.device(args.device)
-    os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
     tokenizer = AutoTokenizer.from_pretrained(args.plm)
     model = AutoModel.from_pretrained(args.plm).to(device)
     sorted_text = []
