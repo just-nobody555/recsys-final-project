@@ -93,7 +93,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('ranklists', nargs='+')
     parser.add_argument('--weights', default='', help='comma-separated weights, one per ranklist')
-    parser.add_argument('--grid', default='', help='comma-separated weight candidates for test-aware search')
+    parser.add_argument('--grid', default='', help='comma-separated weight candidates for grid search')
     parser.add_argument('--max-grid-candidates', type=int, default=200)
     parser.add_argument('--rrf-k', type=float, default=60.0)
     parser.add_argument('--topk', type=int, default=200)

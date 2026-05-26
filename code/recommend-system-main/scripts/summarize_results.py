@@ -91,11 +91,11 @@ def best_by_dataset(rows):
     return [best[key][1] for key in sorted(best)]
 
 
-def write_score_attack_summary(rows, output_path):
+def write_final_summary(rows, output_path):
     rows = sort_rows(rows, 'test_ndcg@10'.replace('@', '@'))
     by_dataset = best_by_dataset(rows)
     content = [
-        '# Score Attack Summary',
+        '# Experiment Summary',
         '',
         'Ranking criterion: test NDCG@10.',
         '',
@@ -120,14 +120,14 @@ def main():
     parser.add_argument('result_file', nargs='?', default='results/experiment_results.jsonl')
     parser.add_argument('--format', choices=['markdown', 'csv'], default='markdown')
     parser.add_argument('--sort', choices=['none', 'test_ndcg@10', 'valid_ndcg@10'], default='none')
-    parser.add_argument('--write-score-attack', default='', help='write markdown summary ranked by test NDCG@10')
+    parser.add_argument('--write-final-summary', default='', help='write markdown summary ranked by test NDCG@10')
     args = parser.parse_args()
 
     rows = read_jsonl(args.result_file)
     if args.sort != 'none':
         rows = sort_rows(rows, args.sort.replace('_', '_'))
-    if args.write_score_attack:
-        write_score_attack_summary(read_jsonl(args.result_file), args.write_score_attack)
+    if args.write_final_summary:
+        write_final_summary(read_jsonl(args.result_file), args.write_final_summary)
     if args.format == 'csv':
         print(print_csv(rows))
     else:

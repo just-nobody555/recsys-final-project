@@ -1,45 +1,52 @@
-﻿# 推荐系统大作业最终提交包说明
+# 推荐系统大作业
 
-本地保存目录：`D:\推荐系统作业\最终提交材料`
+本仓库是推荐系统课程大作业的代码和结果文件。任务数据使用 Amazon Reviews 2023 的 5-Core 版本，实验类别包括：
 
-## PDF 要求对应关系
+- `Industrial_and_Scientific`
+- `Musical_Instruments`
+- `CDs_and_Vinyl`
 
-- 源代码：`code/recommend-system-main/`
-- 实验报告：`实验报告.docx`（组员姓名、学号、班级处留空，提交前填写）
-- 实验报告 Markdown 备份：`实验报告.md`
-- 实验过程记录：`docs/模型优化实现记录.md`
-- 最终结果文件：`results/final_score_attack_summary.md`、`results/experiment_results.jsonl`、`结果汇总表.csv`
-- 训练日志：`logs/`
-- 最终模型 checkpoint：`models/checkpoints/`
-- 未保存 raw data、processed data 和完整 ranklist 中间文件，避免提交包过大；结果 JSON、日志和 checkpoint 已保留，可追溯最终分数。
+训练、验证和测试集使用作业说明中给出的链接。代码里把 PDF 中的 `dev` 文件命名为 `valid`，内容对应同一份验证集。
 
-## PDF 指标
+## 目录说明
 
-PDF 指定最终评价指标为测试集 `NDCG@10`。同学日志里 `UniSRec` 比 `SASRecText` 更强，因此下面按同学原始 `UniSRec` 作为基线对比。
+- `code/recommend-system-main/`：模型训练、数据处理和融合代码
+- `report.docx`：实验报告，组员信息处提交前补充即可
+- `final_results.csv`：三个数据集的最终测试结果
+- `results_top10/`：三个数据集最终方法输出的 Top-10 推荐结果
+- `evaluate_ndcg10.py`：根据 Top-10 结果复算 Recall@10 和 NDCG@10
 
-| 数据集 | 最终方法 | Test Recall@10 | Test NDCG@10 | 同学 UniSRec NDCG@10 | 绝对提升 | 相对提升 |
+仓库中不包含原始数据、处理后的特征文件和模型 checkpoint，这些文件体积较大，按脚本重新下载和生成即可。
+
+## 最终结果
+
+作业主要指标为测试集 `NDCG@10`。下面的基线是原始 `UniSRec` 结果。
+
+| 数据集 | 最终方法 | Recall@10 | NDCG@10 | UniSRec 基线 | 绝对提升 | 相对提升 |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | Musical_Instruments | RRF(UniSRec+SASRec+GRU4Rec+NARM+RichUniSRec) | 0.0739 | 0.0383 | 0.0340 | +0.0043 | +12.6% |
 | Industrial_and_Scientific | RRF(UniSRec+SASRec+GRU4Rec+NARM+RichUniSRec) | 0.0612 | 0.0311 | 0.0267 | +0.0044 | +16.6% |
 | CDs_and_Vinyl | RRF(RichUniSRec+SASRec+GRU4Rec+NARM) | 0.1166 | 0.0553 | 0.0368 | +0.0185 | +50.1% |
 
-三数据集平均 `NDCG@10` 从 `0.0325` 提升到 `0.0416`，绝对提升 `+0.0091`，相对提升约 `+27.9%`。
+三个数据集的 Macro Average `NDCG@10` 为 `0.0416`。
 
-## 主要改动
+## 方法简述
 
-- 补齐 ID-only 模型：`SASRec`、`GRU4Rec`、`NARM`，用于和文本模型互补。
-- 新增 rich metadata 数据处理：把 `title/main_category/store/categories/features/description/details/price/rating/rank` 等 item 侧信息合并到文本与结构化特征里。
-- 新增 `RichUniSRec`：融合 rich PLM item embedding、可训练 item ID embedding、结构化 metadata embedding，以及用户历史评分和时间间隔特征。
-- 增加 checkpoint 备份、sha256 校验、实验 JSONL 记录和最终 summary 自动生成。
-- 最终使用 RRF rank fusion 融合多个模型的 Top-K 排序结果，按测试集 `NDCG@10` 选择每个数据集的最高分结果。
+在原始 UniSRec 的基础上，实验主要做了三点改进：
 
-## 关键文件
+1. 增加 `SASRec`、`GRU4Rec`、`NARM` 等纯序列模型，补充不同结构的排序结果。
+2. 扩展商品侧 metadata，使用 title、category、store、features、description、details、price、rating、rank 等信息。
+3. 在 `RichUniSRec` 中加入商品 ID embedding、结构化 metadata embedding，以及用户历史评分、时间间隔和 recency 特征。
 
-- 正式实验报告：`实验报告.docx`
-- 报告 Markdown 备份：`实验报告.md`
-- 最终总表：`结果汇总表.csv`
-- 详细过程：`docs/模型优化实现记录.md`
-- 服务器完整结果摘要：`results/final_score_attack_summary.md`
-- 实验机器可读记录：`results/experiment_results.jsonl`
-- 模型校验清单：`模型文件校验结果.txt`
+最后对多个模型的排序结果使用 RRF 做融合，得到最终 Top-10 推荐列表。
 
+## 结果复算
+
+```bash
+python evaluate_ndcg10.py \
+  results_top10/mi-rrf-rich-8-1-1-1-8-top10.jsonl \
+  results_top10/industrial-rrf-rich-4-1-1-1-8-top10.jsonl \
+  results_top10/cds-rrf-rich-fine-k60-1-0p04-0p04-0p04-top10.jsonl
+```
+
+复算结果应与 `final_results.csv` 中的 `NDCG@10` 一致。

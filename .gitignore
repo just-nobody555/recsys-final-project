@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+
+dataset/data/
+dataset/processed/
+checkpoints/
+models/checkpoints/
+logs/
+
+*.pth
+*.part
+*.pid
+~$*.docx
+.DS_Store
