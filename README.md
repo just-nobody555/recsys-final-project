@@ -35,9 +35,9 @@
 
 ```bash
 python evaluate_ndcg10.py \
-  results_top10/mi-rrf-rich-8-1-1-1-8-top10.jsonl \
-  results_top10/industrial-rrf-rich-4-1-1-1-8-top10.jsonl \
-  results_top10/cds-rrf-rich-fine-k60-1-0p04-0p04-0p04-top10.jsonl
+  results_top10/Musical_Instruments_top10.jsonl \
+  results_top10/Industrial_and_Scientific_top10.jsonl \
+  results_top10/CDs_and_Vinyl_top10.jsonl
 ```
 
 复算结果应与 `final_results.csv` 中的 `Recall@10` 和 `NDCG@10` 一致。
