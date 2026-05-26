@@ -1,6 +1,6 @@
 dataset,method,num_rows,test_recall@10,test_ndcg@10
-Musical_Instruments,RRF(UniSRec+SASRec+GRU4Rec+NARM+RichUniSRec),57439,0.0739393095,0.0382957621
-Industrial_and_Scientific,RRF(UniSRec+SASRec+GRU4Rec+NARM+RichUniSRec),50985,0.0612336962,0.0311200697
-CDs_and_Vinyl,RRF(RichUniSRec+SASRec+GRU4Rec+NARM),123876,0.1166246892,0.0552535380
-MacroAverage,mixed,232300,0.0839325649,0.0415564566
-WeightedAverage,mixed,232300,,0.0457637292
+Musical_Instruments,final,57439,0.0739393095,0.0382957621
+Industrial_and_Scientific,final,50985,0.0612336962,0.0311200697
+CDs_and_Vinyl,final,123876,0.1166246892,0.0552535380
+MacroAverage,final,232300,0.0839325649,0.0415564566
+WeightedAverage,final,232300,,0.0457637292

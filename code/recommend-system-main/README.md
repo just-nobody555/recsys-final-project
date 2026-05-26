@@ -4,6 +4,7 @@
 
 ```bash
 pip install -r requirements.txt
+python scripts/check_environment.py
 ```
 
 建议使用 Python 3.10、PyTorch 2.x 和 CUDA 环境运行。
@@ -29,13 +30,13 @@ python scripts/download_course_data.py --domain CDs_and_Vinyl
 
 ## 数据处理
 
-普通 metadata：
+普通数据：
 
 ```bash
 python dataset/process_amazon.py --domain Musical_Instruments --device cuda
 ```
 
-rich metadata：
+带 metadata 和历史侧字段的数据：
 
 ```bash
 python dataset/process_amazon.py \
@@ -58,27 +59,10 @@ python scripts/check_rich_dataset.py --domain Musical_Instruments_Rich
 
 ```bash
 python run.py -m UniSRec -d Musical_Instruments --show_progress false
-python run.py -m SASRec -d Musical_Instruments --show_progress false
-python run.py -m GRU4Rec -d Musical_Instruments --show_progress false
-python run.py -m NARM -d Musical_Instruments --show_progress false
 python run.py -m RichUniSRec -d Musical_Instruments_Rich --show_progress false
 ```
 
-模型参数主要在 `config/` 目录中调整。
-
-## 排序导出和融合
-
-导出模型排序结果：
-
-```bash
-python scripts/export_ranklist.py --model UniSRec --dataset Musical_Instruments --checkpoint checkpoints/best.pth --output results/unisrec-ranklist.jsonl
-```
-
-RRF 融合：
-
-```bash
-python scripts/rrf_fusion.py results/model1.jsonl results/model2.jsonl --weights 1,1 --output-ranklist results/fused.jsonl
-```
+模型配置位于 `config/` 目录。
 
 ## 使用 checkpoint 复现最终结果
 
@@ -88,4 +72,4 @@ python scripts/rrf_fusion.py results/model1.jsonl results/model2.jsonl --weights
 bash scripts/reproduce_from_checkpoints.sh
 ```
 
-脚本会加载 `models/checkpoints/*.pth`，重新导出三个数据集的 test ranklist，执行 RRF 融合，并调用仓库根目录的 `evaluate_ndcg10.py` 复算 Recall@10 和 NDCG@10。
+脚本会加载 `models/checkpoints/*.pth`，重新导出三个数据集的 test ranklist，并调用仓库根目录的 `evaluate_ndcg10.py` 复算 Recall@10 和 NDCG@10。
